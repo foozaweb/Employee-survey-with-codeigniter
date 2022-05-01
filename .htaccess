@@ -1,0 +1,12 @@
+    RewriteEngine On
+    RewriteCond $1 !^(index\.php|assets|images|js|css|uploads|favicon.png)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ ./index.php/$1 [L]
+    RewriteCond %{REQUEST_URI} ^system.*
+
+    <IfModule mod_php5.c>
+	  php_value memory_limit 256M
+	  php_value post_max_size 100M
+	  php_value upload_max_filesize 100M
+	</IfModule>
