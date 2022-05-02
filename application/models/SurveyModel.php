@@ -102,7 +102,7 @@ class SurveyModel extends CI_Model
 		$this->email->attach($attachment);
 		$this->load->library('email');
 		$this->email->initialize($config);
-		$this->email->from('noreply@BlwcmStaffAppraisal');
+		$this->email->from('sender');
 		$this->email->to($email);
 		$this->email->subject($subject);
 		$this->email->message($mailToSend);
